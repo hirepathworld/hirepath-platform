@@ -1,1 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HIREPATH | Career Services</title>
 
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f7f9fc;
+      color: #172554;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #ffffff;
+      padding: 20px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      box-shadow: 0 2px 10px #00000010;
+    }
+
+    .logo {
+      font-size: 27px;
+      font-weight: bold;
+      color: #2563eb;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #172554;
+      margin-left: 20px;
+      font-weight: bold;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 90px 20px;
+      background: linear-gradient(135deg, #172554, #2563eb);
+      color: white;
+    }
+
+    .hero h1 {
+      font-size: clamp(32px, 5vw, 52px);
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      max-width: 650px;
+      margin: 0 auto 28px;
+      font-size: 18px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 13px 25px;
+      background: #fbbf24;
+      color: #172554;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    section {
+      padding: 65px 8%;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 35px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 22px;
+    }
+
+    .card {
+      background: white;
+      padding: 28px;
+      border-radius: 14px;
+      box-shadow: 0 5px 20px #0000000d;
+    }
+
+    .card h3 {
+      color: #2563eb;
+      margin-bottom: 12px;
+    }
+
+    .price {
+      font-size: 32px;
+      font-weight: bold;
+      margin: 15px 0;
+    }
+
+    .card ul {
+      padding-left: 20px;
+      margin: 18px 0;
+    }
+
+    .popular {
+      border: 2px solid #2563eb;
+    }
+
+    .contact {
+      background: #eaf0ff;
+    }
+
+    form {
+      max-width: 550px;
+      margin: auto;
+      background: white;
+      padding: 28px;
+      border-radius: 14px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 13px;
+      margin: 10px 0 17px;
+      border: 1px solid #cbd5e1;
+      border-radius: 7px;
+      font-size: 16px;
+    }
+
+    footer {
+      text-align: center;
+      background: #172554;
+      color: white;
+      padding: 25px;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        justify-content: center;
+      }
+
+      nav {
+        text-align: center;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 5px 8px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">HIREPATH</div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#services">Services</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="hero" id="home">
+  <h1>Your Career. Your Path. Your Future.</h1>
+  <p>
+    Professional career services to help you improve your resume,
+    strengthen your online presence, and manage your job applications.
+  </p>
+  <a class="button" href="#pricing">Explore Our Plans</a>
+</section>
+
+<section id="services">
+  <h2 class="section-title">Our Services</h2>
+
+  <div class="cards">
+    <div class="card">
+      <h3>Job Application Services</h3>
+      <p>Choose a plan based on your daily job application requirements.</p>
+    </div>
+
+    <div class="card">
+      <h3>ATS-Friendly Resume</h3>
+      <p>Improve your resume format for applicant tracking systems.</p>
+    </div>
+
+    <div class="card">
+      <h3>Professional Portfolio</h3>
+      <p>Present your skills, projects, and experience professionally.</p>
+    </div>
+
+    <div class="card">
+      <h3>LinkedIn Optimization</h3>
+      <p>Improve your LinkedIn profile and professional presentation.</p>
+    </div>
+  </div>
+</section>
+
+<section id="pricing">
+  <h2 class="section-title">Our Pricing</h2>
+
+  <div class="cards">
+
+    <div class="card">
+      <h3>Starter Plan</h3>
+      <div class="price">$150<span style="font-size:15px">/month</span></div>
+      <p>30+ job applications per day</p>
+      <ul>
+        <li>Job application service</li>
+        <li>Monthly plan</li>
+      </ul>
+      <a class="button" href="#contact">Enquire Now</a>
+    </div>
+
+    <div class="card popular">
+      <h3>Growth Plan</h3>
+      <div class="price">$300<span style="font-size:15px">/month</span></div>
+      <p>70+ job applications per day</p>
+      <ul>
+        <li>Job application service</li>
+        <li>Higher daily application volume</li>
+      </ul>
+      <a class="button" href="#contact">Enquire Now</a>
+    </div>
+
+    <div class="card">
+      <h3>ATS-Friendly Resume</h3>
+      <div class="price">$100</div>
+      <p>One-time fee</p>
+      <ul>
+        <li>ATS-friendly resume service</li>
+      </ul>
+      <a class="button" href="#contact">Get Started</a>
+    </div>
+
+    <div class="card">
+      <h3>Professional Portfolio</h3>
+      <div class="price">$100</div>
+      <p>One-time fee</p>
+      <ul>
+        <li>Professional portfolio service</li>
+      </ul>
+      <a class="button" href="#contact">Get Started</a>
+    </div>
+
+    <div class="card">
+      <h3>LinkedIn Optimization</h3>
+      <div class="price">$30</div>
+      <p>One-time fee</p>
+      <ul>
+        <li>LinkedIn profile optimization</li>
+      </ul>
+      <a class="button" href="#contact">Get Started</a>
+    </div>
+
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <h2 class="section-title">Contact HIREPATH</h2>
+
+  <form action="https://formsubmit.co/hirepath258@gmail.com" method="POST">
+    <label for="name">Your Name</label>
+    <input id="name" name="name" type="text" required>
+
+    <label for="email">Email Address</label>
+    <input id="email" name="email" type="email" required>
+
+    <label for="service">Interested Service</label>
+    <select id="service" name="service" required>
+      <option value="">Select a service</option>
+      <option>30+ Applications per Day - $150/month</option>
+      <option>70+ Applications per Day - $300/month</option>
+      <option>ATS-Friendly Resume - $100</option>
+      <option>Professional Portfolio - $100</option>
+      <option>LinkedIn Optimization - $30</option>
+    </select>
+
+    <label for="message">Message</label>
+    <textarea id="message" name="message" rows="4"></textarea>
+
+    <button class="button" type="submit">Submit Enquiry</button>
+  </form>
+</section>
+
+<footer>
+  <p>© 2026 HIREPATH. All rights reserved.</p>
+  <p>Helping you move forward in your career.</p>
+</footer>
+
+</body>
+</html>
