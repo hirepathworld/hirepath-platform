@@ -158,6 +158,148 @@
         margin: 5px 8px;
       }
     }
+
+    /* HIREPATH Job Hunt Process */
+
+#job-process {
+  background: #c5ffad;
+  padding: 65px 25px;
+  border-radius: 24px;
+  margin: 35px 0;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  color: #171717;
+}
+
+.process-heading {
+  max-width: 750px;
+  margin: 0 auto 55px;
+}
+
+.process-label {
+  display: inline-block;
+  padding: 8px 20px;
+  border: 1px solid #6ab957;
+  border-radius: 25px;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.process-heading h2 {
+  font-size: 38px;
+  margin: 25px 0 15px;
+}
+
+.process-heading p {
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.process-container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 45px 25px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.process-card {
+  position: relative;
+  background: #ffffff;
+  border: 8px solid #65e83f;
+  border-radius: 50%;
+  width: 230px;
+  height: 230px;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin: auto;
+  padding: 35px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.step-number {
+  position: absolute;
+  top: 10px;
+  left: -18px;
+  background: #65e83f;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.process-card h3 {
+  font-size: 17px;
+  line-height: 1.4;
+  margin: 10px 0;
+}
+
+.process-card p {
+  color: #666666;
+  font-size: 12px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.process-note {
+  max-width: 750px;
+  margin: 40px auto 0;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+@media (max-width: 800px) {
+  .process-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 30px 15px;
+  }
+
+  .process-heading h2 {
+    font-size: 30px;
+  }
+
+  .process-card {
+    width: 220px;
+    height: 220px;
+    border-width: 6px;
+    padding: 30px 15px 15px;
+  }
+
+  .process-card h3 {
+    font-size: 15px;
+  }
+
+  .process-card p {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 520px) {
+  .process-container {
+    grid-template-columns: 1fr;
+  }
+
+  .process-card {
+    width: 250px;
+    height: 250px;
+  }
+
+  .process-heading h2 {
+    font-size: 27px;
+  }
+
+  #job-process {
+    padding: 45px 15px;
+  }
+}
   </style>
 </head>
 
@@ -209,45 +351,78 @@
 </section>
 
   <section id="job-process">
-  <h2>Our Job Hunt Process</h2>
-  <p>Complete career support from job search to interview preparation.</p>
+  <div class="process-heading">
+    <span class="process-label">OUR PROCESS</span>
+
+    <h2>Your Job Hunt Starts Here</h2>
+
+    <p>
+      From career planning to job applications and mock tests,
+      HIREPATH supports you throughout your job search journey.
+    </p>
+  </div>
 
   <div class="process-container">
 
     <div class="process-card">
-      <h3>1. Career Consultation</h3>
-      <p>We understand your career goals, experience, skills, preferred roles, and salary expectations.</p>
+      <span class="step-number">01</span>
+      <h3>Career Consultation</h3>
+      <p>
+        We understand your experience, skills, career goals,
+        preferred job roles, locations, and salary expectations.
+      </p>
     </div>
 
     <div class="process-card">
-      <h3>2. Resume & LinkedIn Optimization</h3>
-      <p>We improve your ATS-friendly resume and LinkedIn profile to highlight your professional strengths.</p>
+      <span class="step-number">02</span>
+      <h3>Resume & LinkedIn Optimization</h3>
+      <p>
+        We improve your ATS-friendly resume, optimize your LinkedIn
+        profile, and help showcase your professional portfolio.
+      </p>
     </div>
 
     <div class="process-card">
-      <h3>3. Job Search Strategy</h3>
-      <p>We identify suitable job opportunities based on your experience, skills, and career goals.</p>
+      <span class="step-number">03</span>
+      <h3>Personalized Job Search</h3>
+      <p>
+        We identify relevant job opportunities based on your skills,
+        experience, preferred locations, and career goals.
+      </p>
     </div>
 
     <div class="process-card">
-      <h3>4. Job Applications</h3>
-      <p>We assist with relevant job applications and submit them only after receiving your approval.</p>
+      <span class="step-number">04</span>
+      <h3>Job Applications</h3>
+      <p>
+        We assist with suitable job applications and submit them
+        only after receiving your approval.
+      </p>
     </div>
 
     <div class="process-card">
-      <h3>5. Application Tracking</h3>
-      <p>We track job titles, companies, application dates, and application status to keep you informed.</p>
+      <span class="step-number">05</span>
+      <h3>Application Tracking</h3>
+      <p>
+        We track company names, job titles, application dates,
+        and application statuses to keep you updated.
+      </p>
     </div>
 
     <div class="process-card">
-      <h3>6. Interview Preparation</h3>
-      <p>We help you prepare with practice questions, mock interview guidance, and recruiter discussion tips.</p>
+      <span class="step-number">06</span>
+      <h3>Mock Tests</h3>
+      <p>
+        Practice aptitude, technical, and role-specific mock tests
+        to assess your skills and improve your job readiness.
+      </p>
     </div>
 
   </div>
 
   <p class="process-note">
-    HIREPATH supports your job search journey. Interviews and job offers are not guaranteed.
+    HIREPATH supports your job search journey. Interviews and job
+    offers depend on employer decisions and are not guaranteed.
   </p>
 </section>
 
