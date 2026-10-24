@@ -487,12 +487,34 @@
 <section class="contact" id="contact">
   <h2 class="section-title">Contact HIREPATH</h2>
 
-  <form action="https://formsubmit.co/hirepath258@gmail.com" method="POST">
+  <form id="crmContactForm">
+
     <label for="name">Your Name</label>
-    <input id="name" name="name" type="text" required>
+    <input
+      id="name"
+      name="name"
+      type="text"
+      maxlength="150"
+      required
+    >
 
     <label for="email">Email Address</label>
-    <input id="email" name="email" type="email" required>
+    <input
+      id="email"
+      name="email"
+      type="email"
+      maxlength="254"
+      required
+    >
+
+    <label for="phone">Phone Number</label>
+    <input
+      id="phone"
+      name="phone"
+      type="tel"
+      maxlength="30"
+      required
+    >
 
     <label for="service">Interested Service</label>
     <select id="service" name="service" required>
@@ -505,11 +527,22 @@
     </select>
 
     <label for="message">Message</label>
-    <textarea id="message" name="message" rows="4"></textarea>
+    <textarea
+      id="message"
+      name="message"
+      rows="4"
+      maxlength="3000"
+    ></textarea>
 
-    <button class="button" type="submit">Submit Enquiry</button>
+    <button class="button" id="crmSubmitBtn" type="submit">
+      Submit Enquiry
+    </button>
+
+    <p id="crmFormStatus" role="status" aria-live="polite"></p>
+
   </form>
 </section>
+
 
 <footer>
   <p>For any queries contact: +919705406380.</p> 
@@ -518,5 +551,66 @@
   <p>Helping you move forward in your career.</p>
 </footer>
 
+<script>
+const crmForm = document.getElementById("crmContactForm");
+
+crmForm.addEventListener("submit", async function (event) {
+  event.preventDefault();
+
+  const button = document.getElementById("crmSubmitBtn");
+  const status = document.getElementById("crmFormStatus");
+
+  button.disabled = true;
+  button.textContent = "Submitting...";
+  status.textContent = "";
+
+  const formData = new FormData(crmForm);
+
+  const lead = {
+    full_name: formData.get("name").trim(),
+    email: formData.get("email").trim(),
+    phone: formData.get("phone").trim(),
+    service: formData.get("service"),
+    message: formData.get("message").trim()
+  };
+
+  try {
+    const response = await fetch(
+      "/.netlify/functions/create-lead",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(lead)
+      }
+    );
+
+    const result = await response.json();
+
+    if (!response.ok) {
+      throw new Error(
+        result.error || "Unable to submit your enquiry."
+      );
+    }
+
+    status.textContent =
+      "Thank you! Your enquiry was submitted successfully.";
+
+    crmForm.reset();
+
+  } catch (error) {
+    status.textContent =
+      "Sorry, we could not submit your enquiry. Please try again.";
+
+    console.error("CRM submission error:", error);
+
+  } finally {
+    button.disabled = false;
+    button.textContent = "Submit Enquiry";
+  }
+});
+</script>
+  
 </body>
 </html>
