@@ -57,12 +57,11 @@ console.log("Supabase URL format:", supabaseUrl?.startsWith("https://"));
       `${supabaseUrl}/rest/v1/crm_leads`,
       {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "apikey": supabaseKey,
-          "Authorization": `Bearer ${supabaseKey}`,
-          "Prefer": "return=minimal"
-        },
+       headers: {
+  "Content-Type": "application/json",
+  "apikey": supabaseKey,
+  "Prefer": "return=minimal"
+},
         body: JSON.stringify({
           full_name,
           email,
