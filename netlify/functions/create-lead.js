@@ -97,7 +97,12 @@ console.log("Supabase URL format:", supabaseUrl?.startsWith("https://"));
       }
     );
   } catch (error) {
-    console.error("Lead submission failed:", error.message);
+   console.error("Lead submission failed:", {
+  name: error.name,
+  message: error.message,
+  cause: error.cause?.message,
+  code: error.cause?.code
+});
 
     return new Response(
       JSON.stringify({ error: "Something went wrong" }),
