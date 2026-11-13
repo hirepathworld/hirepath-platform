@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HIREPATH | CRM Admin</title>
+  <style>
+    *{box-sizing:border-box;font-family:Arial,sans-serif}body{margin:0;background:#f7f9fc;color:#172554}header{background:#fff;padding:18px 5%;display:flex;align-items:center;justify-content:space-between;gap:15px;box-shadow:0 2px 10px #00000010}.brand{font-size:25px;font-weight:800;color:#2563eb}.header-right{display:flex;align-items:center;gap:15px;flex-wrap:wrap}button,select{padding:10px 14px;border:1px solid #cbd5e1;border-radius:8px;background:#fff;cursor:pointer}button.primary{background:#2563eb;color:#fff;border:0}main{max-width:1200px;margin:35px auto;padding:0 20px}.heading{display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap}.heading h1{margin:0 0 6px}.muted{color:#64748b}.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px;margin:25px 0}.stat,.panel{background:#fff;border-radius:12px;padding:20px;box-shadow:0 4px 18px #0000000a}.stat strong{display:block;font-size:28px;color:#2563eb}.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:15px}.toolbar input{padding:10px;border:1px solid #cbd5e1;border-radius:8px;min-width:230px}.table-wrap{overflow-x:auto}table{width:100%;border-collapse:collapse;min-width:850px}th,td{text-align:left;padding:13px 12px;border-bottom:1px solid #e2e8f0;font-size:14px}th{color:#475569;background:#f8fafc}.status-select{padding:7px;border:1px solid #cbd5e1;border-radius:6px}.cell-input{font:inherit;padding:7px;border:1px solid #cbd5e1;border-radius:6px;min-width:145px;max-width:210px}.notes-input{min-width:190px;min-height:42px;resize:vertical}.assigned-input{min-width:130px}#notice{min-height:22px;color:#b45309;margin:12px 0}#empty{padding:28px;text-align:center;color:#64748b}@media(max-width:600px){header{align-items:flex-start;flex-direction:column}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">HIREPATH <span style="color:#64748b;font-size:15px">CRM</span></div>
+    <div class="header-right"><span id="adminEmail" class="muted"></span><button id="logoutButton">Logout</button></div>
+  </header>
+  <main>
+    <div class="heading"><div><h1>Enquiry Dashboard</h1><div class="muted">View and manage website enquiries.</div></div><button class="primary" id="refreshButton">Refresh leads</button></div>
+    <div class="stats">
+      <div class="stat">Total enquiries<strong id="totalCount">—</strong></div>
+      <div class="stat">New<strong id="newCount">—</strong></div>
+      <div class="stat">Contacted<strong id="contactedCount">—</strong></div>
+      <div class="stat">Placed<strong id="placedCount">—</strong></div>
+    </div>
+    <section class="panel">
+      <div class="toolbar"><input id="searchInput" type="search" placeholder="Search name, email or phone"><select id="statusFilter"><option value="">All statuses</option><option>New</option><option>Contacted</option><option>Qualified</option><option>Interview</option><option>Placed</option><option>Rejected</option></select></div>
+      <p id="notice" role="status" aria-live="polite"></p>
+      <div class="table-wrap"><table><thead><tr><th>Name</th><th>Email</th><th>Phone</th><th>Service</th><th>Source</th><th>Created</th><th>Status</th><th>Follow-up</th><th>Assigned to</th><th>Notes</th></tr></thead><tbody id="leadsBody"></tbody></table></div>
+      <div id="empty" hidden>No enquiries found.</div>
+    </section>
+  </main>
+  <script type="module" src="/admin.js"></script>
+</body>
+</html>
